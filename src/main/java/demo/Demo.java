@@ -29,12 +29,12 @@ public class Demo {
         map.put("hello", "xin chào");
         map.put("good bye", "tạm biệt");
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            if (entry.getKey().equals(name)){
+            if (entry.getKey().equals(name)) {
                 model.addAttribute("name", entry.getValue());
-            }else{
-                model.addAttribute("name", "");
+                return "dictionary";
             }
         }
+        model.addAttribute("name", "not found");
         return "dictionary";
     }
 
